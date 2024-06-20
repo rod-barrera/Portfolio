@@ -20,6 +20,8 @@ body {
     margin: 0;
     padding: 0;
     min-width: 320px;
+    overflow-y: auto; /* Permitir desplazamiento general */
+
 }
 
 /* Enlaces */
@@ -54,15 +56,16 @@ h6 {
 
 /* Contenedor principal */
 .container {
-    width: 1024px;
-    height: 100vh;
+    max-width: 1024px;
     margin: 0 auto;
     display: flex;
-    gap: 15px;
 }
 
 .columnleft {
+    position: fixed;
     width: 50%;
+    max-width: 512px;
+    height: 100vh;
     padding-top: 3rem;
     padding-left: 3rem;
 }
@@ -86,6 +89,7 @@ h6 {
 
 .columnright {
     width: 50%;
+    margin-left: 50%;
     padding-top: 3rem;
     padding-right: 3rem;
 }
@@ -228,12 +232,15 @@ nav ul li a:hover {
 
     .columnleft {
         width: 100%;
+        height: auto;
         padding: 2rem;
+        position: static;
     }
 
     .columnright {
         width: 100%;
         padding: 2rem;
+        margin-left: 0;
     }
 
     nav {
@@ -258,7 +265,7 @@ nav ul li a:hover {
         font-size: 2.25rem;
     }
 
-    .columnright h2 {
+    .columnleft h2 {
         font-size: 1rem;
     }
 
