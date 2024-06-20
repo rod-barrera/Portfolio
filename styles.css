@@ -1,0 +1,212 @@
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Establecer la fuente base */
+html {
+    font-size: 16px; /* Puedes ajustar según tus necesidades */
+}
+
+/* Configuración del cuerpo */
+body {
+    font-family: Inter, sans-serif; /* Puedes cambiarlo según tus preferencias */
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #D1D5DB;
+    background-color: #0F172A;
+    margin: 0;
+    padding: 0;
+    min-width: 320px; /* Establece un ancho mínimo */
+}
+
+/* Enlaces */
+a {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del elemento padre */
+}
+
+/* Imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Listas */
+ul {
+    list-style-type: none;
+}
+
+/* Encabezados */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: normal;
+}
+
+/* Contenedor principal */
+.container {
+    width: 1024px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex; /* Añadido para hacer el contenedor flex */
+    gap: 15px;
+}
+
+.column1 {
+    width: 50%;
+    padding-top: 3rem;
+    padding-left: 3rem;
+}
+
+.column1 h1 {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.column1 h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.column1 p {
+    font-size: 0.875rem;
+    max-width: 20rem;
+    margin-top: 10px;
+}
+
+.column2 {
+    width: 50%;
+    padding-top: 3rem;
+    padding-right: 3rem;
+}
+
+.column2 p {
+    font-size: 0.875rem;
+}
+
+h1 {
+    font-weight: bold;
+    color: #cdd7ee;
+}
+
+p {
+    color: #94a3b8;
+}
+
+footer {
+    color: #64748b;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espacio entre los elementos del menú */
+}
+
+nav ul li {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a {
+    padding: 5px 0;
+    position: relative;
+    color: #94a3b8;
+    font-weight: bold;
+    transition: color 0.3s, padding-left 0.3s;
+    padding-left: 35px; /* Ajustar el espacio entre la barra y el texto */
+}
+
+nav ul li a.active {
+    color: #cdd7ee;
+    padding-left: 65px;
+}
+
+nav ul li a.active::before {
+    background-color: #cdd7ee;
+    width: 60px;
+    height: 1px; /* Ancho del borde activo */
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    height: 1px; /* Altura constante */
+    width: 30px; /* Ancho inicial visible */
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Centrar verticalmente */
+    background-color: #94a3b8;
+    transition: all 0.3s ease-in-out;
+    transform-origin: left center;
+}
+
+nav ul li a:hover::before {
+    background-color: #cdd7ee;
+    width: 60px; /* Ancho al pasar el mouse */
+    height: 1px; /* Mantener la altura constante */
+}
+
+nav ul li a:hover {
+    color: #cdd7ee;
+    padding-left: 65px; /* Incrementar el espacio al pasar el mouse */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 1023px) {
+    .container {
+        flex-direction: column;
+        width: auto;
+        gap: 0px;
+    }
+    .column1 {
+        width: 100%; /* Las columnas ocuparán el 100% del ancho */
+        padding: 2rem;
+    }
+    .column2 {
+        width: 100%; /* Las columnas ocuparán el 100% del ancho */
+        padding: 2rem;
+    }
+    nav {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .column1 {
+        width: 100%; /* Las columnas ocuparán el 100% del ancho */
+        padding: 1.5rem;
+    }
+    .column2 {
+        width: 100%; /* Las columnas ocuparán el 100% del ancho */
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .column1 h1 {
+        font-size: 2.25rem;
+    }
+    .column1 h2 {
+        font-size: 1rem;
+    }
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
