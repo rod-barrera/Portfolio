@@ -7,25 +7,25 @@
 
 /* Establecer la fuente base */
 html {
-    font-size: 16px; /* Puedes ajustar según tus necesidades */
+    font-size: 16px;
 }
 
 /* Configuración del cuerpo */
 body {
-    font-family: Inter, sans-serif; /* Puedes cambiarlo según tus preferencias */
+    font-family: Inter, sans-serif;
     font-size: 1rem;
     line-height: 1.6;
     color: #D1D5DB;
     background-color: #0F172A;
     margin: 0;
     padding: 0;
-    min-width: 320px; /* Establece un ancho mínimo */
+    min-width: 320px;
 }
 
 /* Enlaces */
 a {
     text-decoration: none;
-    color: inherit; /* Hereda el color del elemento padre */
+    color: inherit;
 }
 
 /* Imágenes */
@@ -41,9 +41,15 @@ ul {
 }
 
 /* Encabezados */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
-    font-weight: normal;
+    font-weight: bold;
+    color: #cdd7ee;
 }
 
 /* Contenedor principal */
@@ -51,46 +57,52 @@ h1, h2, h3, h4, h5, h6 {
     width: 1024px;
     height: 100vh;
     margin: 0 auto;
-    display: flex; /* Añadido para hacer el contenedor flex */
+    display: flex;
     gap: 15px;
 }
 
-.column1 {
+.columnleft {
     width: 50%;
     padding-top: 3rem;
     padding-left: 3rem;
 }
 
-.column1 h1 {
+.columnleft h1 {
     font-size: 2.5rem;
     line-height: 1;
 }
 
-.column1 h2 {
+.columnleft h2 {
     font-size: 1.25rem;
     font-weight: bold;
     margin-top: 10px;
 }
 
-.column1 p {
+.columnleft p {
     font-size: 0.875rem;
     max-width: 20rem;
     margin-top: 10px;
 }
 
-.column2 {
+.columnright {
     width: 50%;
     padding-top: 3rem;
     padding-right: 3rem;
 }
 
-.column2 p {
-    font-size: 0.875rem;
+.columnright h3 {
+    font-size: 1rem;
+    font-weight: bold;
 }
 
-h1 {
-    font-weight: bold;
-    color: #cdd7ee;
+.columnright p {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.experience {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 p {
@@ -101,10 +113,59 @@ footer {
     color: #64748b;
 }
 
+.card {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.5rem;
+}
+
+.cardleft {
+    width: 30%
+}
+
+.cardleft span {
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.cardright {
+    width: 70%;
+}
+
+.cardright h4 {
+    font-size: 0.875rem;
+}
+
+.cardright p {
+    font-size: 0.75rem;
+}
+
+.skills {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.skill {
+    background-color: #112240;
+    color: #64ffda;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
 nav ul {
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Espacio entre los elementos del menú */
+    gap: 30px;
 }
 
 nav ul li {
@@ -119,7 +180,7 @@ nav ul li a {
     color: #94a3b8;
     font-weight: bold;
     transition: color 0.3s, padding-left 0.3s;
-    padding-left: 35px; /* Ajustar el espacio entre la barra y el texto */
+    padding-left: 35px;
 }
 
 nav ul li a.active {
@@ -130,17 +191,17 @@ nav ul li a.active {
 nav ul li a.active::before {
     background-color: #cdd7ee;
     width: 60px;
-    height: 1px; /* Ancho del borde activo */
+    height: 1px;
 }
 
 nav ul li a::before {
     content: '';
     position: absolute;
-    height: 1px; /* Altura constante */
-    width: 30px; /* Ancho inicial visible */
+    height: 1px;
+    width: 30px;
     left: 0;
     top: 50%;
-    transform: translateY(-50%); /* Centrar verticalmente */
+    transform: translateY(-50%);
     background-color: #94a3b8;
     transition: all 0.3s ease-in-out;
     transform-origin: left center;
@@ -148,13 +209,13 @@ nav ul li a::before {
 
 nav ul li a:hover::before {
     background-color: #cdd7ee;
-    width: 60px; /* Ancho al pasar el mouse */
-    height: 1px; /* Mantener la altura constante */
+    width: 60px;
+    height: 1px;
 }
 
 nav ul li a:hover {
     color: #cdd7ee;
-    padding-left: 65px; /* Incrementar el espacio al pasar el mouse */
+    padding-left: 65px;
 }
 
 /* Media query para pantallas más pequeñas */
@@ -164,36 +225,53 @@ nav ul li a:hover {
         width: auto;
         gap: 0px;
     }
-    .column1 {
-        width: 100%; /* Las columnas ocuparán el 100% del ancho */
+
+    .columnleft {
+        width: 100%;
         padding: 2rem;
     }
-    .column2 {
-        width: 100%; /* Las columnas ocuparán el 100% del ancho */
+
+    .columnright {
+        width: 100%;
         padding: 2rem;
     }
+
     nav {
         display: none;
     }
 }
 
 @media (max-width: 767px) {
-    .column1 {
-        width: 100%; /* Las columnas ocuparán el 100% del ancho */
+    .columnleft {
+        width: 100%;
         padding: 1.5rem;
     }
-    .column2 {
-        width: 100%; /* Las columnas ocuparán el 100% del ancho */
+
+    .columnright {
+        width: 100%;
         padding: 1.5rem;
     }
 }
 
 @media (max-width: 576px) {
-    .column1 h1 {
+    .columnleft h1 {
         font-size: 2.25rem;
     }
-    .column1 h2 {
+
+    .columnright h2 {
         font-size: 1rem;
+    }
+
+    .card {
+        flex-direction: column;
+    }
+
+    .cardleft {
+        width: 100%;
+    }
+
+    .cardright {
+        width: 100%;
     }
 }
 
