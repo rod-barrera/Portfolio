@@ -1,16 +1,28 @@
-/* Reseteo básico */
+/* Configuraciones iniciales */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Establecer la fuente base */
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 html {
     font-size: 16px;
 }
 
-/* Configuración del cuerpo */
 body {
     font-family: Inter, sans-serif;
     font-size: 1rem;
@@ -20,29 +32,23 @@ body {
     margin: 0;
     padding: 0;
     min-width: 320px;
-    overflow-y: auto; /* Permitir desplazamiento general */
+    overflow-y: auto;
 
 }
 
-/* Enlaces */
 a {
     text-decoration: none;
     color: inherit;
 }
 
-/* Imágenes */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+p {
+    color: #94a3b8;
 }
 
-/* Listas */
 ul {
     list-style-type: none;
 }
 
-/* Encabezados */
 h1,
 h2,
 h3,
@@ -54,14 +60,6 @@ h6 {
     color: #cdd7ee;
 }
 
-.icons {
-    display: flex;
-}
-
-.icon {
-    width: 40px;
-}
-
 /* Contenedor principal */
 .container {
     max-width: 1024px;
@@ -69,72 +67,161 @@ h6 {
     display: flex;
 }
 
+/* Columnas izquierda */
 .columnleft {
     position: fixed;
     width: 50%;
     max-width: 512px;
     height: 100vh;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     padding-left: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.columnleft h1 {
+.top {
+    margin-bottom: 0.625rem;
+}
+
+.intro {
+    margin-bottom: 8rem;
+}
+
+.intro h1 {
     font-size: 2.5rem;
     line-height: 1;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
-.columnleft h2 {
+.intro h2 {
     font-size: 1.25rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
-.columnleft p {
+.intro p {
     font-size: 0.875rem;
     max-width: 20rem;
 }
 
+/* .navigation {} */
+
+.navigation ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation ul li {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.navigation ul li a {
+    padding: 5px 0;
+    position: relative;
+    color: #94a3b8;
+    font-weight: bold;
+    font-size: 0.875rem;
+    transition: color 0.3s, padding-left 0.3s;
+    padding-left: 35px;
+}
+
+.navigation ul li a.active {
+    color: #cdd7ee;
+    padding-left: 65px;
+}
+
+.navigation ul li a.active::before {
+    background-color: #cdd7ee;
+    width: 60px;
+    height: 1px;
+}
+
+.navigation ul li a::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 30px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #94a3b8;
+    transition: all 0.3s ease-in-out;
+    transform-origin: left center;
+}
+
+.navigation ul li a:hover::before {
+    background-color: #cdd7ee;
+    width: 60px;
+    height: 1px;
+}
+
+.navigation ul li a:hover {
+    color: #cdd7ee;
+    padding-left: 65px;
+}
+
+/* .bottom {} */
+
+.icons {
+    display: flex;
+}
+
+.icon {
+    height: 40px;
+    width: 40px;
+    display: flex;
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Columna derecha */
 .columnright {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     width: 50%;
     margin-left: 50%;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     padding-right: 3rem;
 }
+
+/* .about {} */
 
 .columnright h3 {
     font-size: 1rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.about p {
+.paragraphs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.paragraphs p {
     font-size: 0.875rem;
-    margin-bottom: 1rem;
-    margin-bottom: 2rem;
 }
 
-.experience {
-    margin-bottom: 2rem;
-}
+/* .experience {} */
 
-.projects {
-    margin-bottom: 2rem;
-}
-
-p {
-    color: #94a3b8;
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .card {
     display: flex;
     flex-direction: row;
-    margin-top: 0.5rem;
 }
 
 .cardleft {
@@ -157,7 +244,7 @@ p {
 
 .cardright p {
     font-size: 0.75rem;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 .skills {
@@ -181,68 +268,14 @@ p {
     transition: transform 0.3s, background-color 0.3s;
 }
 
+/* .projects {} */
+
 .footer {
     color: #64748b;
     font-size: 0.875rem;
 }
 
-nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-nav ul li {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-nav ul li a {
-    padding: 5px 0;
-    position: relative;
-    color: #94a3b8;
-    font-weight: bold;
-    transition: color 0.3s, padding-left 0.3s;
-    padding-left: 35px;
-}
-
-nav ul li a.active {
-    color: #cdd7ee;
-    padding-left: 65px;
-}
-
-nav ul li a.active::before {
-    background-color: #cdd7ee;
-    width: 60px;
-    height: 1px;
-}
-
-nav ul li a::before {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 30px;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #94a3b8;
-    transition: all 0.3s ease-in-out;
-    transform-origin: left center;
-}
-
-nav ul li a:hover::before {
-    background-color: #cdd7ee;
-    width: 60px;
-    height: 1px;
-}
-
-nav ul li a:hover {
-    color: #cdd7ee;
-    padding-left: 65px;
-}
-
-/* Media query para pantallas más pequeñas */
+/* Media queries */
 @media (max-width: 1023px) {
     .container {
         flex-direction: column;
@@ -261,11 +294,16 @@ nav ul li a:hover {
     .columnright {
         width: 100%;
         padding: 2rem;
+        padding-top: 0;
         margin-left: 0;
     }
 
-    nav {
+    .navigation {
         display: none;
+    }
+
+    .intro {
+        margin-bottom: 0;
     }
 }
 
@@ -277,7 +315,8 @@ nav ul li a:hover {
 
     .columnright {
         width: 100%;
-        padding: 0 1.5rem;
+        padding: 1.5rem;
+        padding-top: 0;
     }
 }
 
@@ -294,25 +333,7 @@ nav ul li a:hover {
         flex-direction: column;
     }
 
-    .cardleft {
+    .cardleft, .cardright {
         width: 100%;
     }
-
-    .cardright {
-        width: 100%;
-    }
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('Inter-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('Inter-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
 }
